@@ -13,9 +13,18 @@ var secondArray = [3, 'mario'];
 // secondArray fino a che non raggiunge lo stesso numero di elemnti del firstArray
 
 do {
-    var random = getRndInteger(1, 100);
 
-    secondArray.push(random);
+    // Prima versione, creando solo numeri da pushare
+    var randomNumbers = getRndInteger(1, 100);
+
+    secondArray.push(randomNumbers);
+
+    // Seconda versione creando stringhe da pushare
+
+    var randomString = makeString(7);
+
+    secondArray.push(randomString);
+
 
 } while (secondArray.length != firstArray.length);
 
@@ -26,6 +35,18 @@ console.log(secondArray);
 
 
 
+
+
+
+function makeString(length) {
+   var result           = '';
+   var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+   var charactersLength = characters.length;
+   for ( var i = 0; i < length; i++ ) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+   }
+   return result;
+}
 
 
 function getRndInteger(min, max) {
