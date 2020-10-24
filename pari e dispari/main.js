@@ -1,25 +1,34 @@
-// Crea un array di numeri interi e fai la somma di tutti gli
-// elementi che sono in posizione dispari
+// Pari o dispari: scrivere una (o più di una) funzione per simulare il gioco di pari e dispari tra l'utente e il computer.
+// L'utente sceglie un numero tra 1 e 5 e sceglie "pari" o "dispari".
+// Il computer genera un secondo numero casuale tra 1 e 5.
+// Per vedere chi dei due vince, si deve fare la somma dei numeri dell'utente e del computer e stabilire se il risultato è pari o dispari.
+// Ad esempio, l'utente inserisce il numero 1 e indica come scelta "pari"; il computer genera casualmente il numero 3.
+// In questo caso ha vinto l'utente (perché 1+3 = 4, che è pari)
 
 
+// L'utente sceglie un numero tra 1 e 5 e sceglie "pari" o "dispari".
 
-// Creo l'array con all'interno i numeri interi
-var arrayNumbers = [1, 4, 5, 9, 11, 14, 22, 20, 7, 10, 2, 3];
+var userNumber = parseInt(prompt('Scegli un numero tra 1 e 5'));
 
-console.log(arrayNumbers);
+var userEvenOdd = prompt('Scegli tra pari o dispari');
 
-// Creo la variabile su cui sommerò tutti gli elementi in posizione dispari
 var somma = 0;
 
 
-// Col ciclo for provo a recuperare solo gli elementi in posizione dispari
+// Il computer genera un secondo numero casuale tra 1 e 5.
 
-for (var i = 0; i < arrayNumbers.length; i++) {
+var pcNumber = getRndInteger(1, 5);
 
-    if (i % 2 !=0) {
-        somma += arrayNumbers[i];
-        console.log(arrayNumbers[i]);
-    }
+console.log(pcNumber);
+
+
+
+
+
+
+
+
+
+function getRndInteger(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
-
-console.log(somma);
