@@ -19,13 +19,26 @@ var somma = 0;
 do {
     var userNumbers = parseInt(prompt('Inserisci un numero'));
 
+    // Controllo che inserisca un numero e non lettere
+
     if (!isNaN (userNumbers)) {
 
         arrayNumbers.push(userNumbers);
+
+    // Faccio la somma di tutti i numeri che vengono pushati sfruttando la variabile
+    // creata in precedenza "somma"
+
+        somma += userNumbers;
+
+    // Alert da mandar all'utente se non inserisce numeri
     } else {
         alert(' Devi inserire un numero, non lettere')
     }
 
-} while (arrayNumbers.length < 3);
+    // Creo la condizione tale per cui se "somma" vale meno di 50 il ciclo si ripete
+
+} while (somma < 50);
 
 console.log(arrayNumbers);
+
+console.log(somma);
